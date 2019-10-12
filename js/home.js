@@ -14,7 +14,7 @@ window.onload=function () {
 			.then(function (response) {
 					return response.json();
 			})
-			.then(function (data) {  
+			.then(function (data) {
         var contenedor = document.querySelector("#populares")
         console.log(data);
         for (var i = 0; i < data.results.length; i++) {
@@ -54,8 +54,11 @@ window.onload=function () {
 					console.log("El error es: " + error);
 			})
 
+      // SERIES QUE TIENEN UN CAPITULO ESTRENO DENTRO DE LOS 7 DIAS
+      // var onAirURL = 'https://api.themoviedb.org/3/tv/on_the_air?api_key=' + key
 
-      var onAirURL = 'https://api.themoviedb.org/3/tv/on_the_air?api_key=' + key
+      // SERIES QUE ESTAN AL AIRE <HOY>
+      var onAirURL = 'https://api.themoviedb.org/3/tv/airing_today?api_key='+ key
 
       fetch(onAirURL,{
         method: metodo
