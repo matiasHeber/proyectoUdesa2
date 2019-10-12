@@ -8,11 +8,15 @@
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/buscador.css">
     <link rel="stylesheet" href="css/uikit.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
+    
     <script src="js/uikit-icons.min.js" charset="utf-8"></script>
     <script src="js/uikit.min.js" charset="utf-8"></script>
     <script src="js/home.js" charset="utf-8"></script>
     <script src="js/buscador.js"></script>
+    
 </head>
 <body>
 
@@ -38,14 +42,35 @@
       </nav>
   </header>
 
-    <form action="" method="GET">
+    <div class="container">
 
-        <select name="with_genres" id="opciones">
+        <form action="" method="get">
+            <input type="hidden" value="e59c94a503ea78e9502aa8e308f21eb5" name="key">
+            <div class="form-group">
+                <label for="exampleFormControlInput1">Titulo</label>
+                <input type="text" name="query" class="form-control" id="exampleFormControlInput1" placeholder="e.g: Harry Poker y las reliquias del Casino Flotante" autofocus>
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlSelect1">Selecciona un género</label>
+                <select class="form-control" name="with_genres" id="exampleFormControlSelect1">
+                    <option value="" selected>Géneros</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary" style="width: 100%;">Submit</button>
+        </form>
 
-        </select>
+    </div>
+    
 
-        <button type="submit">Buscar</button>
-    </form>
 
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
 </body>
 </html>

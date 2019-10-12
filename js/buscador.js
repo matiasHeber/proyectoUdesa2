@@ -11,17 +11,11 @@ window.onload = function(){
         return response.json();
     })
     .then(function (data) {  
-        var contenedor = document.querySelector("#opciones")
-        // console.log(data);
+        var contenedor = document.querySelector("#exampleFormControlSelect1");
         for (var i = 0; i < data.genres.length; i++) {
-        // console.log(data.results[i]);
-        var item = data.genres[i];
-        console.log(item.id)
-        contenedor.innerHTML += '<option value="'+ item.id +'">' + item.name + '</option>'
-    }
-
-
-
+        var genre = data.genres[i];
+        contenedor.innerHTML += '<option value="'+ genre.id +'">' + genre.name + '</option>'
+        }
     })
     .catch(function (error) {
             console.log("El error es: " + error);
