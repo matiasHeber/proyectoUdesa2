@@ -10,7 +10,7 @@ window.onload = function(){
     .then(function (response) {
         return response.json();
     })
-    .then(function (data) {  
+    .then(function (data) {
         var contenedor = document.querySelector("#exampleFormControlSelect1");
         for (var i = 0; i < data.genres.length; i++) {
         var genre = data.genres[i];
@@ -20,6 +20,7 @@ window.onload = function(){
     .catch(function (error) {
             console.log("El error es: " + error);
     })
+
 
 
 }

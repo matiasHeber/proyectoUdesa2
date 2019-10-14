@@ -11,12 +11,12 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-    
+
     <script src="js/uikit-icons.min.js" charset="utf-8"></script>
     <script src="js/uikit.min.js" charset="utf-8"></script>
     <script src="js/home.js" charset="utf-8"></script>
     <script src="js/buscador.js"></script>
-    
+
 </head>
 <body>
 
@@ -44,7 +44,7 @@
 
     <div class="container">
 
-        <form action="" method="get">
+        <form action="resultadoBusqueda.html" method="get">
             <input type="hidden" value="e59c94a503ea78e9502aa8e308f21eb5" name="key">
             <div class="form-group">
                 <label for="exampleFormControlInput1">Titulo</label>
@@ -55,12 +55,37 @@
                 <select class="form-control" name="with_genres" id="exampleFormControlSelect1">
                     <option value="" selected>Géneros</option>
                 </select>
+                <br>
+                <label for="exampleFormControlSelect2">Selecciona un género</label>
+                <select class="form-control" name="first_air_date_year" id="exampleFormControlSelect2">
+                    <option value="" selected>Año de estreno</option>
+                    <option value="2019">2019</option>
+                    <option value="2018">2018</option>
+                    <option value="2017">2017</option>
+                    <option value="2016">2016</option>
+                    <option value="2015">2015</option>
+                    <option value="2014">2014</option>
+                    <option value="2013">2013</option>
+                    <option value="2012">2012</option>
+                    <option value="2011">2011</option>
+                    <option value="2010">2010</option>
+                    <option value="2009">2009</option>
+                    <option value="2008">2008</option>
+                    <option value="2007">2007</option>
+                    <option value="2006">2006</option>
+                    <option value="2005">2005</option>
+                    <option value="2004">2004</option>
+                    <option value="2003">2003</option>
+                    <option value="2002">2002</option>
+                    <option value="2001">2001</option>
+                    <option value="2000">2000</option>
+                </select>
             </div>
             <button type="submit" class="btn btn-primary" style="width: 100%;">Submit</button>
         </form>
 
     </div>
-    
+
 
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
