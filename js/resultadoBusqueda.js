@@ -4,24 +4,42 @@ window.onload= function () {
   var query = paramsSearch.get('query')
   var genres = paramsSearch.get('with_genres')
   var releaseDate = paramsSearch.get('first_air_date_year')
+  var sort = paramsSearch.get('sort_by')
+
+  console.log(sort);
+
   var key = "e59c94a503ea78e9502aa8e308f21eb5";
-
-  console.log(query == "", " -Query vacio");
-  console.log(genres == "", "-with_genres vacio");
-
-
   var poster =  'https://image.tmdb.org/t/p/original/'
   var metodo = 'GET';
 
 
-  // var busquedaURL = 'https://api.themoviedb.org/3/discover/tv?api_key='+key+ '&query=' + query
 if (query != "") {
   var busquedaURL = 'https://api.themoviedb.org/3/search/tv?api_key='+key+'&query=' + query
-}else if (genres != "" && releaseDate != "") {
-  var busquedaURL = "https://api.themoviedb.org/3/discover/tv?api_key="+ key +"&first_air_date_year"+releaseDate + "&with_genres"+genres
 
-  // ESTO NO ESTÁ ANDANDO BIEN.....
+}else if (genres != "" && releaseDate != "" && sort != "") {
+  var busquedaURL = 'https://api.themoviedb.org/3/discover/tv?api_key='+key+'&sort_by='+sort+'&first_air_date_year='+releaseDate+'&with_genres='+ genres
+
+
+}else if (genres != "" && releaseDate != "") {
+  var busquedaURL = "https://api.themoviedb.org/3/discover/tv?api_key="+ key +"&first_air_date_year="+releaseDate + "&with_genres="+genres
+
+}else if(genres != "" && sort != "") {
+  var busquedaURL = 'https://api.themoviedb.org/3/discover/tv?api_key='+key+'&sort_by='+sort+'&with_genres='+ genres
+
+}else if (releaseDate != "" && sort != "") {
+  var busquedaURL = 'https://api.themoviedb.org/3/discover/tv?api_key='+key+'&sort_by='+sort+'&page=1&first_air_date_year='+releaseDate
+
+}else if (genres != "") {
+  var busquedaURL = "https://api.themoviedb.org/3/discover/tv?api_key="+ key + "&with_genres=" + genres
+
+}else if (releaseDate != "") {
+  var busquedaURL = 'https://api.themoviedb.org/3/discover/tv?api_key='+key+'&first_air_date_year='+releaseDate
+
+}else {
+  alert("something bad happened")
 }
+
+
 
 
 
@@ -48,6 +66,8 @@ if (query != "") {
       data.results[i]
       div+= '</div>'
       contenedor.innerHTML+= div
+
+      console.log(data.results[i].first_air_date);
     }
   })
   .catch(function (error) {

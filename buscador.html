@@ -43,22 +43,23 @@
   </header>
 
     <div class="container">
-
+        <h3 align="center">Elige el método de busqueda que mas te guste, puedes combinar campos</h3>
+        <hr>
         <form action="resultadoBusqueda.html" method="get">
             <input type="hidden" value="e59c94a503ea78e9502aa8e308f21eb5" name="key">
             <div class="form-group">
-                <label for="exampleFormControlInput1">Titulo</label>
+                <label for="exampleFormControlInput1">Por título</label>
                 <input type="text" name="query" class="form-control" id="exampleFormControlInput1" placeholder="e.g: Harry Poker y las reliquias del Casino Flotante" autofocus>
             </div>
             <div class="form-group">
-                <label for="exampleFormControlSelect1">Selecciona un género</label>
+                <label for="exampleFormControlSelect1">Por género</label>
                 <select class="form-control" name="with_genres" id="exampleFormControlSelect1">
-                    <option value="" selected>Géneros</option>
+                    <option value="" selected disabled>Géneros</option>
                 </select>
                 <br>
-                <label for="exampleFormControlSelect2">Selecciona un género</label>
+                <label for="exampleFormControlSelect2">Por año</label>
                 <select class="form-control" name="first_air_date_year" id="exampleFormControlSelect2">
-                    <option value="" selected>Año de estreno</option>
+                    <option value="" selected disabled>Año de estreno</option>
                     <option value="2019">2019</option>
                     <option value="2018">2018</option>
                     <option value="2017">2017</option>
@@ -79,6 +80,17 @@
                     <option value="2002">2002</option>
                     <option value="2001">2001</option>
                     <option value="2000">2000</option>
+                </select>
+                <br>
+                <label for="exampleFormControlSelect3">Orden de los resultados</label>
+                <select class="form-control" name="sort_by" id="exampleFormControlSelect3">
+                    <option value="" selected disabled>Ordenar por</option>
+                    <option value="vote_average.desc">Votos de mayor a menor</option>
+                    <option value="vote_average.asc">Votos de menor a mayor</option>
+                    <option value="first_air_date.desc">Fecha de estreno de mayor a menor</option>
+                    <option value="first_air_date.asc">Fecha de estreno de menor a mayor</option>
+                    <option value="popularity.desc">Popularidad de mayor a menor</option>
+                    <option value="popularity.asc">Popularidad de menor a mayor</option>
                 </select>
             </div>
             <button type="submit" class="btn btn-primary" style="width: 100%;">Submit</button>
